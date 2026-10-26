@@ -47,7 +47,9 @@ Requires Node.js 20 or newer.
 
 **Netlify:** import the repo, or drag the `dist` folder onto app.netlify.com/drop. `netlify.toml` and `public/_redirects` handle routing.
 
-Then connect the custom domain and update the URLs in `index.html`.
+**GitHub Pages:** already set up. Every push to `main` runs `.github/workflows/deploy.yml`, which builds the site with `BASE_PATH=/<repo-name>/` and publishes it at https://sultansaudagar1999.github.io/sanjaynanakate/. In the repo, go to Settings → Pages and keep Source set to "GitHub Actions".
+
+Then connect the custom domain and update the URLs in `index.html`. On a custom domain at the root, `BASE_PATH` must be `/`.
 
 ## How the inquiry form works
 

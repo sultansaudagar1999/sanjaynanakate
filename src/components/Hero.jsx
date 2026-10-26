@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, Clock, MapPin, Phone } from 'lucide-react'
 import { useLanguage } from '../i18n/LanguageContext'
 import siteConfig from '../config/siteConfig'
+import { assetUrl } from '../utils/format'
 import { SmartImage, Val, WhatsAppIcon } from './ui'
 import WhatsAppButton from './WhatsAppButton'
 
@@ -52,7 +53,7 @@ export default function Hero() {
               height="1080"
             />
             <div className="hero-photo-card">
-              <img src={siteConfig.logo} alt="" width="36" height="36" />
+              <img src={assetUrl(siteConfig.logo)} alt="" width="36" height="36" />
               <div>
                 <strong>{name}</strong>
                 <span>{pick(siteConfig.designationShort)}</span>

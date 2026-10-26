@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { Facebook, Instagram, Mail, MapPin, Phone, Twitter, Youtube } from 'lucide-react'
 import { useLanguage } from '../i18n/LanguageContext'
 import siteConfig from '../config/siteConfig'
-import { mailHref, telHref } from '../utils/format'
+import { assetUrl, mailHref, telHref } from '../utils/format'
 import { NAV_ITEMS } from './Navbar'
 import WhatsAppButton from './WhatsAppButton'
 import { Val } from './ui'
@@ -27,7 +27,7 @@ export default function Footer() {
       <div className="container footer-grid">
         <div className="footer-brand">
           <div className="brand">
-            <img src={siteConfig.logo} alt="" width="44" height="44" className="brand-logo" />
+            <img src={assetUrl(siteConfig.logo)} alt="" width="44" height="44" className="brand-logo" />
             <span className="brand-text">
               <span className="brand-name">{name}</span>
               <span className="brand-role">{pick(siteConfig.designationShort)}</span>

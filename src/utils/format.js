@@ -1,3 +1,13 @@
+/**
+ * Turns a site path like "/images/logo.png" into one that also works when the
+ * site is hosted in a sub-folder (e.g. GitHub Pages: /sanjaynanakate/).
+ */
+export function assetUrl(path) {
+  if (!path || !path.startsWith('/') || path.startsWith('//')) return path
+  const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+  return path.startsWith(`${base}/`) ? path : `${base}${path}`
+}
+
 /** Placeholder values in siteConfig are written as "[ ... ]". */
 export function isPlaceholder(value) {
   return typeof value === 'string' && /^\[.*\]$/s.test(value.trim())

@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { useLanguage } from '../i18n/LanguageContext'
 import siteConfig from '../config/siteConfig'
+import { assetUrl } from '../utils/format'
 import LanguageSwitcher from './LanguageSwitcher'
 import WhatsAppButton from './WhatsAppButton'
 
@@ -81,7 +82,7 @@ export default function Navbar() {
     <header className={`site-header ${scrolled || open ? 'is-scrolled' : ''}`}>
       <div className="container nav-bar">
         <Link to="/#home" className="brand" onClick={() => setOpen(false)}>
-          <img src={siteConfig.logo} alt="" width="40" height="40" className="brand-logo" />
+          <img src={assetUrl(siteConfig.logo)} alt="" width="40" height="40" className="brand-logo" />
           <span className="brand-text">
             <span className="brand-name">{pick(siteConfig.name)}</span>
             <span className="brand-role">{pick(siteConfig.designationShort)}</span>

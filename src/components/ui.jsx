@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Camera, ImageOff, Info } from 'lucide-react'
 import { useLanguage } from '../i18n/LanguageContext'
-import { isPlaceholder, stripBrackets } from '../utils/format'
+import { assetUrl, isPlaceholder, stripBrackets } from '../utils/format'
 import siteConfig from '../config/siteConfig'
 
 /** Renders a config value; "[placeholder]" values get a dotted highlight. */
@@ -57,7 +57,7 @@ export function SmartImage({ src, alt, className = '', eager = false, placeholde
 
   return (
     <img
-      src={src}
+      src={assetUrl(src)}
       alt={alt}
       className={`smart-img ${state === 'loading' ? 'is-loading' : ''} ${className}`}
       loading={eager ? 'eager' : 'lazy'}
